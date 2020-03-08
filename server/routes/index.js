@@ -1,15 +1,16 @@
 import express from 'express';
-import { constants } from '@/constants';
+import { PORT } from '~/config';
+import { authorize } from '@/providers/spotify/authorize';
 
 
 const app = express();
-app.get('/api', (req, res) => {  // Route handler
+app.get('/api', (req, res) => {
     res.send('Tune Up!');
 });
-app.get('/api/spotify/get_categories', (req, res) => {
-    res.send({'pop rap': 'drake'});
+app.get('/api/spotify/get_categories/', (req, res) => {
+    authorize(response => res.send(response));
 });
-const PORT = constants.PORT;
+
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}...`);
 });
