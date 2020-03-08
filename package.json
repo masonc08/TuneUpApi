@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/masonc08/TuneUpApi/issues"
   },
-  "homepage": "https://github.com/masonc08/TuneUpApi#readme"
+  "homepage": "https://github.com/masonc08/TuneUpApi#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/register": "^7.8.6",
+    "babel-plugin-root-import": "^6.4.1"
+  }
 }
