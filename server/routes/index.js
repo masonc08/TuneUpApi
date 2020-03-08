@@ -3,6 +3,7 @@ import { PORT } from '~/config';
 import {
     authorize,
     get_categories,
+    playlist_search,
 } from '@/providers/spotify';
 
 
@@ -24,7 +25,21 @@ app.get('/v1/spotify/get_categories/', (req, res) => {
         res.status(400).send('There was no auth key provided');
         return;
     }
-    get_categories(res, req.query.key);
+    try {
+        get_categories(res, req.query.key);
+    } catch (e) {
+        res.status(500).send(e);
+    }
+});
+
+app.get('/v1/spotify/playlist_search/', (req, res) => {
+    if (!req.query.key) {
+        res.status(400).send('There was no auth key provided');
+    } else if (!req.query.q) {
+        res.status(400).send('There was no query provided');
+    } else {
+        playlist_search(res, req.query.key, req.query.q);
+    }
 });
 
 app.listen(PORT, () => {
