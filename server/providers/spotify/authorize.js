@@ -3,6 +3,7 @@ import { urls } from './urls';
 import btoa from 'btoa';
 import request from 'request';
 
+
 export const authorize = (res) => {
   if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET) {
     res.status(401).send({
