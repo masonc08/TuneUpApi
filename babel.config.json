@@ -9,7 +9,7 @@
             "rootPathPrefix": "~/"
           },
           {
-            "rootPathSuffix": "./server",
+            "rootPathSuffix": "./server/",
             "rootPathPrefix": "@/"
           }
         ]
