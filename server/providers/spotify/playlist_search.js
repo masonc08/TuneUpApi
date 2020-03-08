@@ -24,7 +24,7 @@ const process_results = body => {
         });
     response['playlists'] = playlists;
     }
-    return playlists;
+    return response;
 }
 
 export const playlist_search = (res, key, query) => {
