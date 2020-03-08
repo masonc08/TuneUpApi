@@ -1,0 +1,20 @@
+{
+  "name": "tuneupapi",
+  "version": "1.0.0",
+  "description": "RESTful APIs for TuneUp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "masonc08",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/masonc08/TuneUpApi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/masonc08/TuneUpApi/issues"
+  },
+  "homepage": "https://github.com/masonc08/TuneUpApi#readme"
+}
