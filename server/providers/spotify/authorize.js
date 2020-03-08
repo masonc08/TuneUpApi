@@ -6,7 +6,7 @@ import request from 'request';
 
 export const authorize = (res) => {
   if (!SPOTIFY_CLIENT_ID || !SPOTIFY_CLIENT_SECRET) {
-    res.status(401).send({
+    res.status(503).send({
       error: 'Spotify client keypair not detected. Are environment variables configured correctly?'
     });
     return;
@@ -26,6 +26,8 @@ export const authorize = (res) => {
       if (error) {
           throw new Error(error);
       }
-      res.status(response.statusCode).send(JSON.parse(response.body));
+      res.status(response.statusCode).send(
+        JSON.parse(response.body)
+      );
   });
 };
