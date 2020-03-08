@@ -4,6 +4,7 @@ import { authorize } from '@/providers/spotify/authorize';
 
 
 const app = express();
+<<<<<<< HEAD
 app.get('/v1', (req, res) => {
     res.send('Tune Up!');
 });
