@@ -3,7 +3,7 @@ import { urls } from './';
 
 const get_image = images => {
     for (const image of images) {
-        if (image['height'] >= 200 && image['width'] >= 200) {
+        if (image['height'] >= 200 && image['width'] >= 200 && image['url']) {
             return image['url'];
         }
     }
@@ -11,18 +11,16 @@ const get_image = images => {
 }
 
 const process_results = body => {
-    console.log()
     const response = {};
     response['href'] = body['playlists']['href'];
-    const playlists = [];
+    response['playlists'] = [];
     for (const item of body['playlists']['items']) {
-        playlists.push({
-            'name': item['name'],
-            'description': item['description'],
-            'href': item['href'],
+        response['playlists'].push({
+            'name': item['name'] || '',
+            'description': item['description'] || '',
+            'href': item['href'] || '',
             'image': get_image(item['images']),
         });
-    response['playlists'] = playlists;
     }
     return response;
 }
@@ -44,8 +42,8 @@ export const playlist_search = (res, key, query) => {
             res.status(response.statusCode).send(query_results);
             return;
         }
-        // res.status(response.statusCode).send(query_results);
-        const processed_response = process_results(query_results);
-        res.status(response.statusCode).send(processed_response);
+        res.status(response.statusCode).send(
+            process_results(query_results)
+        );
     });    
 };

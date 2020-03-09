@@ -8,6 +8,7 @@ import {
 
 
 const app = express();
+
 app.get('/v1', (req, res) => {
     res.send('Tune Up!');
 });
@@ -38,7 +39,11 @@ app.get('/v1/spotify/playlist_search/', (req, res) => {
     } else if (!req.query.q) {
         res.status(400).send('There was no query provided');
     } else {
-        playlist_search(res, req.query.key, req.query.q);
+        try {
+            playlist_search(res, req.query.key, req.query.q);
+        } catch (e) {
+            res.status(500).send(e);
+        }
     }
 });
 
