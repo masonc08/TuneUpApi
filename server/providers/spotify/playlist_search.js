@@ -32,10 +32,10 @@ export const playlist_search = (res, key, query) => {
     const query_results = JSON.parse(response.body);
     if (response.statusCode != 200) {
       res.status(response.statusCode).send(query_results);
-      return;
+    } else {
+      res.status(response.statusCode).send(
+        process_results(query_results)
+      );
     }
-    res.status(response.statusCode).send(
-      process_results(query_results)
-    );
   });    
 };
