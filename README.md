@@ -19,7 +19,7 @@ WIP: RESTful APIs for TuneUp
     {
       "name": [NAME],
       "description": [PLAYLIST DESCRIPTION],
-      "href": [Spotify playlist API url],
+      "id": [Spotify playlist ID],
       "image": [IMAGE URL]
     }
   ]
