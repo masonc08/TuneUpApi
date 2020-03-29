@@ -10,7 +10,7 @@ const process_results = body => {
     response['playlists'].push({
       'name': item['name'] || '',
       'description': item['description'] || '',
-      'href': item['href'] || '',
+      'id': item['id'] || '',
       'image': item['images'][0]['url'] || '',
     });
   }
