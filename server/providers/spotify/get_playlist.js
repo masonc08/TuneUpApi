@@ -4,26 +4,24 @@ import { urls } from './';
 
 const process_tracks = body => {
   const response = {};
-  let previewUrlCount = 0;
-  response['tracks'] = [];
+  response.tracks = [];
   for (const item of body['items']){
     const track = item.track;
     if (!track) {
       continue;
     }
     const previewUrl = track.preview_url;
-    if (previewUrl){
-      previewUrlCount++;
+    if (previewUrl) {
+      response['tracks'].push({
+        id: track.id || '',
+        name: track.name || '',
+        preview_url: previewUrl || '',
+        image: track.album.images[0].url,
+      });
     }
-    response['tracks'].push({
-      id: track.id || '',
-      name: track.name || '',
-      preview_url: previewUrl || '',
-      image: track.album.images[0].url,
-    });
   }
-  response['tracksWithPreview'] = previewUrlCount;
-  response['totalTracks'] = response.tracks.length;
+  response.tracksWithPreview = response.tracks.length;
+  response.totalTracks = body.items.length;
   return response;
 };
 
