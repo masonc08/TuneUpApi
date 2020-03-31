@@ -8,6 +8,9 @@ const process_tracks = body => {
   response['tracks'] = [];
   for (const item of body['items']){
     const track = item.track;
+    if (!track) {
+      continue;
+    }
     const previewUrl = track.preview_url;
     if (previewUrl){
       previewUrlCount++;
