@@ -1,21 +1,7 @@
 import request from 'request';
 import { urls } from './';
+import { process_body } from './utils';
 
-
-const process_results = body => {
-  const response = {};
-  response['href'] = body['playlists']['href'];
-  response['playlists'] = [];
-  for (const item of body['playlists']['items']) {
-    response['playlists'].push({
-      'name': item['name'] || '',
-      'description': item['description'] || '',
-      'id': item['id'] || '',
-      'image': item['images'][0]['url'] || '',
-    });
-  }
-  return response;
-}
 
 export const playlist_search = (res, key, query) => {
   const options = {
@@ -34,7 +20,7 @@ export const playlist_search = (res, key, query) => {
       res.status(response.statusCode).send(query_results);
     } else {
       res.status(response.statusCode).send(
-        process_results(query_results)
+        process_body(query_results)
       );
     }
   });    
