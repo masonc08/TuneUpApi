@@ -3,10 +3,10 @@ import { urls } from './';
 import { process_body } from './utils';
 
 
-export const get_playlist_from_category = (res, key, id) => {
+export const get_playlists_from_category = (res, key, id) => {
   const options = {
     'method': 'GET',
-    'url': urls.get_playlist_from_category(id),
+    'url': urls.get_playlists_from_category(id),
     'headers': {
       'Authorization': `Bearer ${key}`
     }

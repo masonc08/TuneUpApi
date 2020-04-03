@@ -1,6 +1,6 @@
 
 /*
-  Used for endpoints get_playlist_from_category and
+  Used for endpoints get_playlists_from_category and
   playlist_search, for parsing spotify responses, since
   both spotify endpoints return similar responseb bodies
 */

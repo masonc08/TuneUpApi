@@ -5,7 +5,7 @@ import {
   get_categories,
   playlist_search,
   get_playlist,
-  get_playlist_from_category,
+  get_playlists_from_category,
 } from '@/providers/spotify';
 
 
@@ -47,13 +47,13 @@ app.get('/v1/spotify/get_playlist/', (req, res) => {
   }
 });
 
-app.get('/v1/spotify/get_playlist_from_category/', (req, res) => {
+app.get('/v1/spotify/get_playlists_from_category/', (req, res) => {
   if (!req.query.key) {
     res.status(400).send('There was no auth key provided');
   } else if (!req.query.id) {
     req.status(400).send('There was no category ID provided')
   } else {
-    get_playlist_from_category(res, req.query.key, req.query.id);
+    get_playlists_from_category(res, req.query.key, req.query.id);
   }
 });
 
