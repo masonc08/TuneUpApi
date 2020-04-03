@@ -6,9 +6,9 @@ import { process_body } from './utils';
 export const get_playlist_from_category = (res, key, id) => {
   const options = {
     'method': 'GET',
-    'url': 'https://api.spotify.com/v1/browse/categories/at_home/playlists',
+    'url': urls.get_playlist_from_category(id),
     'headers': {
-      'Authorization': 'Bearer BQBj4XRrivB2m52_UM-hhTbUxxjHoFBwln4E1FinAziGdeKQOyhI5RdCOE9sWcZVesxCfBB6mPmptziMuaA'
+      'Authorization': `Bearer ${key}`
     }
   };
   request(options, (error, response) => {
