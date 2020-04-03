@@ -1,21 +1,6 @@
 import request from 'request';
 import { urls } from './';
-
-
-const process_playlists = body => {
-  const response = {};
-  response['href'] = body['playlists']['href'];
-  response['playlists'] = [];
-  for (const item of body['playlists']['items']) {
-    response['playlists'].push({
-      'name': item['name'] || '',
-      'description': item['description'] || '',
-      'id': item['id'] || '',
-      'image': item['images'][0]['url'] || '',
-    });
-  }
-  return response;
-}
+import { process_body } from './utils';
 
 
 export const get_playlist_from_category = (res, key, id) => {
@@ -35,7 +20,7 @@ export const get_playlist_from_category = (res, key, id) => {
       res.status(response.statusCode).send(query_results);
     } else {
       res.status(response.statusCode).send(
-        process_playlists(returned_tracks)
+        process_body(returned_tracks)
       );
     }
   });
