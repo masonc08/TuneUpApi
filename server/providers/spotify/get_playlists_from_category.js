@@ -17,7 +17,7 @@ export const get_playlists_from_category = (res, key, id) => {
     }
     const returned_tracks = JSON.parse(response.body);
     if (response.statusCode != 200) {
-      res.status(response.statusCode).send(query_results);
+      res.status(response.statusCode).send(returned_tracks);
     } else {
       res.status(response.statusCode).send(
         process_body(returned_tracks)
