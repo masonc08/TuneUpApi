@@ -13,6 +13,7 @@ export const get_categories = (res, key) => {
     if (error) {
       throw new Error(error)
     };
+    console.log(options);
     res.status(response.statusCode).send(
       JSON.parse(response.body)
     );
