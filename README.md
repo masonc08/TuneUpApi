@@ -1,5 +1,12 @@
 # TuneUpApi
-WIP: RESTful APIs for TuneUp
+RESTful APIs for [TuneUp](https://github.com/masonc08/TuneUp), responsible for fetching and parsing data from [Spotify APIs](https://developer.spotify.com).
+
+## Environment
+| Key | Value |
+|-----|-------|
+| SPOTIFY_CLIENT_ID | Obtained from the [Spotify Developers dashboard](https://developer.spotify.com/dashboard/) |
+| SPOTIFY_CLIENT_SECRET | Obtained from the [Spotify Developers dashboard](https://developer.spotify.com/dashboard/) |
+| REGION | App deployment region ("US", "CA", etc...), used for music localization |
 
 ## Endpoints
 | Endpoint | Description | Parameters | Response |
