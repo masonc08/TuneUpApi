@@ -8,6 +8,7 @@ RESTful APIs for [TuneUp](https://github.com/masonc08/TuneUp), responsible for f
 | SPOTIFY_CLIENT_SECRET | Obtained from the [Spotify Developers dashboard](https://developer.spotify.com/dashboard/) | "" |
 | REGION | App deployment region ("US", "CA", etc...), used for music localization | "CA" |
 | PORT | Port to run the server on | 3000 |
+_Deployed on Amazon EC2_, under `ec2-18-222-174-61.us-east-2.compute.amazonaws.com`  
 
 ## Endpoints
 | Endpoint | Description | Parameters | Response |
