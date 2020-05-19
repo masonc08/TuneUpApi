@@ -2,14 +2,14 @@
 RESTful APIs for [TuneUp](https://github.com/masonc08/TuneUp), responsible for fetching and parsing data from [Spotify APIs](https://developer.spotify.com).
 
 ## Environment
+__Deployed on Amazon EC2__, to `ec2-18-222-174-61.us-east-2.compute.amazonaws.com`  
+
 | Key | Value | Default |
 |-----|-------|---------|
 | SPOTIFY_CLIENT_ID | Obtained from the [Spotify Developers dashboard](https://developer.spotify.com/dashboard/) |  "" |
 | SPOTIFY_CLIENT_SECRET | Obtained from the [Spotify Developers dashboard](https://developer.spotify.com/dashboard/) | "" |
 | REGION | App deployment region ("US", "CA", etc...), used for music localization | "CA" |
 | PORT | Port to run the server on | 3000 |
-
-_Deployed on Amazon EC2_, under `ec2-18-222-174-61.us-east-2.compute.amazonaws.com`  
 
 ## Endpoints
 | Endpoint | Description | Parameters | Response |
