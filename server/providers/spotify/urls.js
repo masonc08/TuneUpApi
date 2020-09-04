@@ -10,6 +10,6 @@ export const urls = {
     `tracks?fields=items(track(name,preview_url,id,album(images)))`
   ),
   get_playlists_from_category: id => (
-    `https://api.spotify.com/v1/browse/categories/${id}/playlists`
+    `https://api.spotify.com/v1/browse/categories/${id}/playlists?country=` + REGION
   )
 };
