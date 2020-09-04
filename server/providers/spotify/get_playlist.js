@@ -5,6 +5,7 @@ import { urls } from './';
 const process_tracks = body => {
   const response = {};
   response.tracks = [];
+  console.log(body)
   for (const item of body['items']){
     const track = item.track;
     if (!track) {
