@@ -1,5 +1,4 @@
 import express from 'express';
-import { PORT } from '~/config';
 import {
   authorize,
   get_categories,
@@ -9,17 +8,13 @@ import {
 } from '@/providers/spotify';
 
 
-const app = express();
+const router = express.Router();
 
-app.get('/v1/', (req, res) => {
-  res.send('Tune Up!');
-});
-
-app.get('/v1/spotify/authorize/', (req, res) => {
+router.get('/authorize', (req, res) => {
     authorize(res);
 });
 
-app.get('/v1/spotify/get_categories/', (req, res) => {
+router.get('/get_categories', (req, res) => {
   if (!req.query.key) {
     res.status(400).send('There was no auth key provided');
   } else {
@@ -27,7 +22,7 @@ app.get('/v1/spotify/get_categories/', (req, res) => {
   }
 });
 
-app.get('/v1/spotify/playlist_search/', (req, res) => {
+router.get('/playlist_search', (req, res) => {
   if (!req.query.key) {
     res.status(400).send('There was no auth key provided');
   } else if (!req.query.q) {
@@ -37,7 +32,7 @@ app.get('/v1/spotify/playlist_search/', (req, res) => {
   }
 });
 
-app.get('/v1/spotify/get_playlist/', (req, res) => {
+router.get('/get_playlist', (req, res) => {
   if (!req.query.key) {
     res.status(400).send('There was no auth key provided');
   } else if (!req.query.id) {
@@ -47,7 +42,7 @@ app.get('/v1/spotify/get_playlist/', (req, res) => {
   }
 });
 
-app.get('/v1/spotify/get_playlists_from_category/', (req, res) => {
+router.get('/get_playlists_from_category', (req, res) => {
   if (!req.query.key) {
     res.status(400).send('There was no auth key provided');
   } else if (!req.query.id) {
@@ -57,6 +52,4 @@ app.get('/v1/spotify/get_playlists_from_category/', (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}...`);
-});
+export default router;
