@@ -12,7 +12,7 @@ import {
 const router = express.Router();
 
 router.get('/authorize', (_, res) => {
-    authorize(res);
+  authorize(res);
 });
 
 router.get('/get_categories', (req, res) => {
