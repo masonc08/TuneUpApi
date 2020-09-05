@@ -1,6 +1,25 @@
 # TuneUpApi
 RESTful APIs for [TuneUp](https://github.com/masonc08/TuneUp), responsible for fetching and parsing data from [Spotify APIs](https://developer.spotify.com).
 
+## Installation
+After setting cloning the repository:
+1. Install dependencies
+```
+$ npm i
+```
+
+2. Run server
+```
+$ npm start
+```
+
+## Tests
+`TuneUpApi` is tested by `mocha`.
+- Execute tests
+```
+$ npm test
+```
+
 ## Environment
 __Deployed on Amazon EC2__, to `ec2-18-222-174-61.us-east-2.compute.amazonaws.com`  
 
