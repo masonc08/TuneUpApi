@@ -1,5 +1,6 @@
-# TuneUpApi [![<ORG_NAME>](https://circleci.com/gh/masonc08/TuneUpApi.svg?style=shield)](https://app.circleci.com/pipelines/github/masonc08)
-
+# TuneUpApi
+[![<ORG_NAME>](https://circleci.com/gh/masonc08/TuneUpApi.svg?style=shield)](https://app.circleci.com/pipelines/github/masonc08)
+ 
 RESTful APIs for [TuneUp](https://github.com/masonc08/TuneUp), responsible for fetching and parsing data from [Spotify APIs](https://developer.spotify.com).
 
 ## Installation
