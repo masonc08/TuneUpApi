@@ -5,19 +5,19 @@ RESTful APIs for [TuneUp](https://github.com/masonc08/TuneUp), responsible for f
 After setting cloning the repository:
 1. Install dependencies
 ```
-TuneUpApi$ npm i
+$ npm i
 ```
 
 2. Run server
 ```
-TuneUpApi$ npm start
+$ npm start
 ```
 
 ## Tests
 `TuneUpApi` is tested by `mocha`.
 - Execute tests
 ```
-TuneUpApi$ npm test
+$ npm test
 ```
 
 ## Environment
