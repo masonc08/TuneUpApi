@@ -6,7 +6,7 @@ import assert from 'assert';
 
 describe("When logger middleware is provoked", () => {
   before(() => {
-    const time = new Date("December 17, 1995 03:24:00");
+    const time = new Date("1995-12-17T03:24:00");
     tk.freeze(time);
   });
 
@@ -18,8 +18,7 @@ describe("When logger middleware is provoked", () => {
     };
     const stdout = consoleTest.stdout;
     const output = stdout.inspectSync(() => loggerMiddleware(req, {}, () => {}));
-    const regex = RegExp("\\[1995-12-17T03:24:00-05:00\\].*");
-    assert.ok(regex.test(output));
+    assert.match(output[0], /\[1995-12-17T03:24:00.*/);
   });
   it("should log the provoked endpoint", () => {
     const req = {
@@ -29,8 +28,7 @@ describe("When logger middleware is provoked", () => {
     };
     const stdout = consoleTest.stdout;
     const output = stdout.inspectSync(() => loggerMiddleware(req, {}, () => {}));
-    const regex = RegExp(".*v1/");
-    assert.ok(regex.test(output));
+    assert.match(output[0], /.*v1\//);
   });
 
   after(tk.reset);
