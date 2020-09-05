@@ -14,7 +14,7 @@ $ npm start
 ```
 
 ## Tests
-`TuneUpApi` is tested by `mocha`.
+`TuneUpApi` is tested by `mocha`, tests are located under `/test`.
 - Execute tests
 ```
 $ npm test
