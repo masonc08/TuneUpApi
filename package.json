@@ -4,7 +4,8 @@
   "description": "RESTful APIs for TuneUp",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require @babel/register --recursive"
+    "test": "mocha --require @babel/register --recursive",
+    "start": "nodemon start"
   },
   "keywords": [],
   "author": "masonc08",
