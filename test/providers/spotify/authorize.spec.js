@@ -36,5 +36,4 @@ describe("When GET /authorize is provoked", () => {
       access_token: "BQDcMrNi057GCTmlzi4STnWHq7rHjJDCOnUM5plxBnEUXnVJsIVXBoaIb-AR7ZCX1JOReq6_0FLII3DnyJY"
     });
   });
-  
 });
