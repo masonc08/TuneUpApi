@@ -23,11 +23,11 @@ export const authorize = (res) => {
     }
   };
   request(options, (error, response) => { 
-      if (error) {
-          throw new Error(error);
-      }
-      res.status(response.statusCode).send(
-        JSON.parse(response.body)
-      );
+    if (error) {
+        throw new Error(error);
+    }
+    res.status(response.statusCode).send(
+      JSON.parse(response.body)
+    );
   });
 };
