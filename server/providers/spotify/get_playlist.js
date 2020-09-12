@@ -2,10 +2,9 @@ import request from 'request';
 import { urls } from './';
 
 
-const process_tracks = body => {
+export const process_tracks = body => {
   const response = {};
   response.tracks = [];
-  console.log(body)
   for (const item of body['items']){
     const track = item.track;
     if (!track) {
@@ -34,13 +33,14 @@ export const get_playlist = (res, key, id) => {
       'Authorization': `Bearer ${key}`
     }
   };
+  console.log(urls.get_playlist(id))
   request(options, (error, response) => {
     if (error) {
       throw new Error(error);
     }
     const returned_tracks = JSON.parse(response.body);
     if (response.statusCode != 200) {
-      res.status(response.statusCode).send(query_results);
+      res.status(response.statusCode).send(JSON.parse(response.body));
     } else {
       res.status(response.statusCode).send(
         process_tracks(returned_tracks)

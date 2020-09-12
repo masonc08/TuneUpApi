@@ -12,7 +12,7 @@ describe("When GET /authorize is provoked", () => {
   takeStatus.returns({ send: sendResponse });
   const res = {
     status: takeStatus
-  }
+  };
   describe("If there is no spotify client keypair", () => {
     it("should return correct error to client", () => {
       sinon.stub(CONFIGS, 'SPOTIFY_CLIENT_ID').value('');
@@ -26,7 +26,7 @@ describe("When GET /authorize is provoked", () => {
   });
   it("should return an access key to the user", () => {
     sinon.stub(mockBtoa, 'default');
-    sinon.stub(mockRequest, 'get').callsArgWith(1, undefined, {
+    sinon.stub(mockRequest, 'post').callsArgWith(1, undefined, {
       statusCode: 200,
       body: JSON.stringify({ access_token: "BQDcMrNi057GCTmlzi4STnWHq7rHjJDCOnUM5plxBnEUXnVJsIVXBoaIb-AR7ZCX1JOReq6_0FLII3DnyJY" })
     });

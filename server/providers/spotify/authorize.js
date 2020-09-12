@@ -22,7 +22,7 @@ export const authorize = (res) => {
       'grant_type': 'client_credentials'
     }
   };
-  request.get(options, (error, response) => { 
+  request.post(options, (error, response) => { 
     if (error) {
         throw new Error(error);
     }
