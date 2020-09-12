@@ -25,6 +25,8 @@ describe("When GET /authorize is provoked", () => {
     });
   });
   it("should return an access key to the user", () => {
+    sinon.stub(CONFIGS, 'SPOTIFY_CLIENT_ID').value('fakeid');
+    sinon.stub(CONFIGS, 'SPOTIFY_CLIENT_SECRET').value('fakesecret');
     sinon.stub(mockBtoa, 'default');
     sinon.stub(mockRequest, 'post').callsArgWith(1, undefined, {
       statusCode: 200,
