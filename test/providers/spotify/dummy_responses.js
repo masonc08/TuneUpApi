@@ -162,4 +162,59 @@ export const get_playlist_dummy_response_no_preview = {
       }
     },
   ]
-}
+};
+
+export const playlist_search_dummy_response = {
+  playlists: {
+    href: 'hreflink',
+    items: [
+      {
+        "description": "desc1",
+        "id": "id1",
+        "images": [],
+        "name": "name1",
+      },
+      {
+        "description": "desc2",
+        "id": "id2",
+        "images": [
+            {
+                "height": 300,
+                "url": "img2",
+                "width": 300
+            }
+        ],
+        "name": "name2",
+      },
+      {
+        "description": "desc3",
+        "id": "id3",
+        "images": [
+            {
+                "height": 300,
+                "url": "img3",
+                "width": 300
+            },
+            {
+              "height": 200,
+              "url": "img32",
+              "width": 200
+          },
+          {
+            "height": 100,
+            "url": "img33",
+            "width": 100
+        },
+        ],
+        "name": "name3",
+      }
+    ]
+  }
+};
+
+export const playlist_search_dummy_response_no_results = {
+  playlists: {
+    href: 'hreflink',
+    items: []
+  }
+};

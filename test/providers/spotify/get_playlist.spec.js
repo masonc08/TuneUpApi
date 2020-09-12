@@ -24,7 +24,7 @@ describe('When spotify playlists response is passed to process_tracks', () => {
       tracksWithPreview: 2,
       totalTracks: 3
     }
-    assert.ok(result, expected_result);
+    assert.deepStrictEqual(result, expected_result);
   });
   it('Should parse correcctly if there is no preview available', () => {
     const result = process_tracks(get_playlist_dummy_response_no_preview);
@@ -33,6 +33,6 @@ describe('When spotify playlists response is passed to process_tracks', () => {
       tracksWithPreview: 0,
       totalTracks: 3
     };
-    assert.ok(result, expected_result);
+    assert.deepStrictEqual(result, expected_result)
   });
 });
