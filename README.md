@@ -23,7 +23,7 @@ $ npm test
 ```
 
 ## Environment
-__Deployed on Amazon EC2__, to `ec2-18-222-174-61.us-east-2.compute.amazonaws.com`  
+__Deployed on Amazon EC2__, to `http://ec2-13-59-4-53.us-east-2.compute.amazonaws.com:3000`  
 
 | Key | Value | Default |
 |-----|-------|---------|
