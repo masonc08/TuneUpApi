@@ -22,12 +22,12 @@ export const authorize = (res) => {
       'grant_type': 'client_credentials'
     }
   };
-  request(options, (error, response) => { 
-      if (error) {
-          throw new Error(error);
-      }
-      res.status(response.statusCode).send(
-        JSON.parse(response.body)
-      );
+  request.post(options, (error, response) => { 
+    if (error) {
+        throw new Error(error);
+    }
+    const body = JSON.parse(response.body);
+    const apiResponse = { access_token: body.access_token };
+    res.status(response.statusCode).send(apiResponse);
   });
 };

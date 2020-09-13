@@ -2,7 +2,7 @@
 /*
   Used for endpoints get_playlists_from_category and
   playlist_search, for parsing spotify responses, since
-  both spotify endpoints return similar responseb bodies
+  both spotify endpoints return similar response bodies
 */
 export const process_body = body => {
   const response = {};
@@ -13,9 +13,8 @@ export const process_body = body => {
       'name': item['name'] || '',
       'description': item['description'] || '',
       'id': item['id'] || '',
-      'image': item['images'][0]['url'] || '',
+      'image': item['images'][0]?.url || '',
     });
   }
   return response;
-
 }
