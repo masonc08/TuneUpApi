@@ -4,7 +4,7 @@ import { REGION } from '~/config';
 export const urls = {
   authorize: 'https://accounts.spotify.com/api/token',
   get_categories: 'https://api.spotify.com/v1/browse/categories?country=' + REGION,
-  playlist_search: query => `https://api.spotify.com/v1/search?q=${query}&type=playlist`,
+  playlist_search: query => `https://api.spotify.com/v1/search?q=${query}&type=playlist&market=${REGION}`,
   get_playlist: id => (
     `https://api.spotify.com/v1/playlists/${id}/` +
     `tracks?fields=items(track(name,preview_url,id,album(images)))`
