@@ -20,6 +20,7 @@
   "homepage": "https://github.com/masonc08/TuneUpApi#readme",
   "dependencies": {
     "btoa": "^1.2.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "joi": "^17.2.1",
     "mocha": "^8.1.3",
