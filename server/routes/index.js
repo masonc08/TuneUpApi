@@ -11,7 +11,7 @@ import {
 
 
 const app = express();
-app.use(cors());
+app.use(cors({credentials: true, origin: true}));
 
 
 app.get('/v1/', (req, res) => {
